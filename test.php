@@ -55,11 +55,11 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $api = new DBApi($db);
 $api->addTable($postsSpec);
 
-$result = $api->do(array(
-  array(
-    'action' => 'select',
-    'table' => 'posts',
-  ),
+$viewDef = null;
+
+$view = new DBView($api, $viewDef);
+$view->set_query(array(
+  'table' => 'posts',
 ));
 
-print_r(iterator_to_array_deep($result));
+print $view->show();
