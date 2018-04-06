@@ -1,0 +1,5 @@
+.*.swp
+/conf.php
+/node_modules/
+/yarn-error.log
+/yarn.lock
