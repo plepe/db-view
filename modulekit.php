@@ -6,5 +6,6 @@ $depend = array(
 $include = array(
   'php' => array(
     'src/DBView.php',
+    'src/DBViewJSON.php',
   ),
 );
