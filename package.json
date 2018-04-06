@@ -1,0 +1,12 @@
+{
+  "name": "db-view",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/plepe/db-view",
+  "author": "Stephan Bösch-Plepelits <skunk@cg.tuwien.ac.at>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "db-api": "https://github.com/plepe/db-api",
+    "json-readable-encode": "https://github.com/plepe/json-readable-encode"
+  }
+}
