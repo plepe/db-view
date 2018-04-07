@@ -69,6 +69,4 @@ $view = new DBViewTwig($api, "<div>\n<b>{{ entry.author }}</b><br/>\n{{ entry.me
 $view->set_query(array(
   'table' => 'posts',
 ));
-foreach ($view->show() as $t) {
-  print $t;
-}
+print $view->show();
