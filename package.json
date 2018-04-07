@@ -5,8 +5,16 @@
   "repository": "https://github.com/plepe/db-view",
   "author": "Stephan Bösch-Plepelits <skunk@cg.tuwien.ac.at>",
   "license": "GPL-3.0",
+  "scripts": {
+    "build": "browserify src/index.js -o dist/build.js",
+    "watch": "watchify --debug src/index.js -o dist/build.js -v"
+  },
   "dependencies": {
     "db-api": "https://github.com/plepe/db-api",
     "json-readable-encode": "https://github.com/plepe/json-readable-encode"
+  },
+  "devDependencies": {
+    "browserify": "^16.1.1",
+    "watchify": "^3.11.0"
   }
 }
