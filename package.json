@@ -6,7 +6,9 @@
   "author": "Stephan Bösch-Plepelits <skunk@cg.tuwien.ac.at>",
   "license": "GPL-3.0",
   "scripts": {
-    "test": "mocha --bail",
+    "test": "npm run phptest && npm run jstest",
+    "jstest": "mocha --bail",
+    "phptest": "phpunit --stop-on-failure test/test.php",
     "build": "browserify src/index.js -o dist/build.js",
     "watch": "watchify --debug src/index.js -o dist/build.js -v"
   },
