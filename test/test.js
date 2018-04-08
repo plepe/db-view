@@ -18,7 +18,7 @@ describe('DBView', () => {
     view.set_query({ table: 'test1' })
     view.show((err, result) => {
       assert.equal(err, null, 'Error should be null')
-      assert.equal(result, '[[{"a":2,"b":"bar","d":"b"},{"a":3,"b":"bla","d":"b"}]]')
+      assert.equal(result, '[{"a":2,"b":"bar","d":"b"},{"a":3,"b":"bla","d":"b"}]')
       done()
     })
   })

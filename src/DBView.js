@@ -10,7 +10,13 @@ class DBView {
   }
 
   get (callback) {
-    this.api.do([ this.query ], callback)
+    this.api.do([ this.query ], (err, result) => {
+      if (err) {
+        return callback(err)
+      }
+
+      callback(null, result[0])
+    })
   }
 
   show (callback) {
