@@ -2,10 +2,12 @@ const fs = require('fs')
 const conf = JSON.parse(fs.readFileSync('test-conf.json', 'utf8'));
 
 const assert = require('assert')
+const twig = require('twig')
 
 const DBApi = require('db-api')
 const DBView = require('../src/DBView')
 const DBViewJSON = require('../src/DBViewJSON')
+const DBViewTwig = require('../src/DBViewTwig')
 
 const dbApi = new DBApi(conf.url, conf.options)
 
@@ -53,6 +55,23 @@ describe('DBViewJSON', () => {
         ]
     }
 ]`
+      assert.equal(result, expected)
+      done()
+    })
+  })
+})
+
+describe('DBViewTwig', () => {
+  it('init', () => {
+    new DBViewTwig(dbApi, '', { twig })
+  })
+
+  it('show', (done) => {
+    let view = new DBViewTwig(dbApi, '{{ entry.id }}: {{ entry.commentsCount }}\n', { twig })
+    view.set_query({ table: 'test2', query: 1 })
+    view.show((err, result) => {
+      assert.equal(err, null, 'Error should be null')
+      let expected = '1: 2\n'
       assert.equal(result, expected)
       done()
     })
