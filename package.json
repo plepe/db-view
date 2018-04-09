@@ -10,7 +10,8 @@
     "jstest": "mocha --bail",
     "phptest": "phpunit --stop-on-failure test/test.php",
     "build": "browserify src/index.js -o dist/build.js",
-    "watch": "watchify --debug src/index.js -o dist/build.js -v"
+    "watch": "watchify --debug src/index.js -o dist/build.js -v",
+    "lint": "standard src/*.js"
   },
   "dependencies": {
     "db-api": "https://github.com/plepe/db-api",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "browserify": "^16.1.1",
     "mocha": "^5.0.5",
+    "standard": "^11.0.1",
     "twig": "^1.10.5",
     "watchify": "^3.11.0"
   }

@@ -12,6 +12,9 @@ window.onload = () => {
   let view = new DBViewTwig(api, 'Entry {{ entry.id }}: {{ entry.commentsCount }} Comments\n<ul>{% for c in entry.comments %}<li>{{ c.text }}</li>{% endfor %}</ul>', { twig })
   view.set_query({ table: 'test2' })
   view.show((err, result) => {
+    if (err) {
+      global.alert(err)
+    }
     div1.innerHTML = result
   })
 

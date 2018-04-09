@@ -7,9 +7,6 @@ class DBViewModulekitForm extends DBView {
         return callback(err)
       }
 
-      let data = {}
-      let ret = ''
-
       let options = {
         type: 'array',
         default: 1
